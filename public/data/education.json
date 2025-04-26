@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "title": "Bachelor's Degree in Computer Science",
+        "organization": "Universidad de Castilla-La Mancha",
+        "date": "September 2020 - June 2024",
+        "achievements": "Distinct with honors: Database Development, Software Project Management, Software Systems Quality and Software Systems Security.",
+        "foot": "Mention in Software Engineering",
+        "logo": "assets/images/uclm.webp",
+        "ref": "https://www.uclm.es/estudios/grados/ingenieria-informatica"
+    },
+    {
+        "id": 1,
+        "title": "European Master in Software Engineering",
+        "organization": "Universidad Politécnica de Madrid",
+        "date": "September 2024 - Present",
+        "achievements": "Current academic average: 9.42 out of 10",
+        "foot": "Studies in progress",
+        "logo": "assets/images/upm.webp",
+        "ref": "https://emse.fi.upm.es/en/"
+    }
+]

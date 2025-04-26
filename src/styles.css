@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@config "../tailwind.config.js";
+@tailwind utilities;
+
+@theme {
+  --color-back: #222222;
+  --color-side: #3A3A3C;
+  --color-line: #42434a;
+  --color-hover: #222533;
+  --color-headers: #e6e6ef;
+  --color-secondary: #b0b3c1;
+  --color-linkedIn: #005c91;
+  --color-github: #171515;
+}
+
+@layer utilities {
+  .paused {
+    animation-play-state: paused !important;
+  }
+
+  .text-gradient-animate {
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient-text 4s ease infinite;
+  }
+
+  @keyframes gradient-text {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5rem;
+  background-color: #222222;
+  scroll-behavior: smooth;
+}
+
+.animation-once {
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}

@@ -1,0 +1,172 @@
+[
+    {
+      "group": "Frontend development",
+      "technologies": [
+        {
+          "technology": "Angular",
+          "description": "Web framework that empowers developers to build fast, reliable applications.",
+          "icon": "devicon-angular-plain",
+          "link": "https://angular.dev/",
+          "tags": ["Frontend", "Framework"]
+        },
+        {
+          "technology": "TypeScript",
+          "description": "Strongly typed superset of JavaScript that adds static types and other helpful features to the language.",
+          "icon": "devicon-typescript-plain",
+          "link": "https://www.typescriptlang.org/",
+          "tags": ["Frontend", "Web"]
+        },
+        {
+          "technology": "HTML",
+          "description": "Markup language used for structuring and presenting hypertext documents on the World Wide Web.",
+          "icon": "devicon-html5-plain",
+          "link": "https://developer.mozilla.org/docs/Web/HTML",
+          "tags": ["Frontend", "Web"]
+        },
+        {
+          "technology": "CSS",
+          "description": "Language that controls how HTML documents look and are formatted",
+          "icon": "devicon-css3-plain",
+          "link": "https://developer.mozilla.org/docs/Web/CSS",
+          "tags": ["Frontend", "Web"]
+        },
+        {
+          "technology": "Tailwind CSS",
+          "description": "Utility-first CSS framework that lets you build modern UIs directly in your HTML using reusable classes.",
+          "icon": "devicon-tailwindcss-plain",
+          "link": "https://tailwindcss.com/",
+          "tags": ["Frontend", "Styles"]
+        },
+        {
+          "technology": "Angular Material",
+          "description": "UI component library for Angular that implements Google’s Material Design system.",
+          "icon": "devicon-angularmaterial-plain",
+          "link": "https://material.angular.io/",
+          "tags": ["Frontend", "Styles"]
+        }
+        
+      ]
+    },
+    {
+      "group": "Backend development",
+      "technologies": [
+        {
+          "technology": "Java",
+          "description": "Object-oriented programming language widely used for backend systems.",
+          "icon": "devicon-java-plain",
+          "link": "https://www.java.com/en/",
+          "tags": ["Backend", "Logic"]
+        },
+        {
+          "technology": "Spring",
+          "description": "Powerful Java framework for building web and enterprise applications.",
+          "icon": "devicon-spring-plain",
+          "link": "https://spring.io/",
+          "tags": ["Backend", "Framework"]
+        },
+        {
+          "technology": "Microsoft SQL Server",
+          "description": "Relational database management system developed by Microsoft.",
+          "icon": "devicon-microsoftsqlserver-plain",
+          "link": "https://www.microsoft.com/en/sql-server",
+          "tags": ["Backend", "Database"]
+        },
+        {
+          "technology": "MongoDB",
+          "description": "Document-oriented NoSQL database for flexible data storage.",
+          "icon": "devicon-mongodb-plain",
+          "link": "https://www.mongodb.com/",
+          "tags": ["Backend", "Database"]
+        },
+        {
+          "technology": "SQL Developer",
+          "description": "Oracle tool for managing and developing SQL-based databases.",
+          "icon": "devicon-sqldeveloper-plain",
+          "link": "https://www.oracle.com/database/sqldeveloper/",
+          "tags": ["Backend", "Database"]
+        },
+        {
+          "technology": "Firebase",
+          "description": "Platform developed by Google for creating mobile and web applications.",
+          "icon": "devicon-firebase-plain",
+          "link": "https://firebase.google.com/",
+          "tags": ["Backend", "Service"]
+        }
+      ]
+    },
+    {
+      "group": "Mobile development",
+      "technologies": [
+        {
+          "technology": "Swift",
+          "description": "Powerful and intuitive programming language for iOS, macOS, watchOS, and tvOS.",
+          "icon": "devicon-swift-plain",
+          "link": "https://developer.apple.com/swift/",
+          "tags": ["Mobile", "Logic"]
+        },
+        {
+          "technology": "SwiftUI",
+          "description": "Declarative framework for building user interfaces on Apple platforms.",
+          "icon": "devicon-swift-plain",
+          "link": "https://developer.apple.com/xcode/swiftui/",
+          "tags": ["Mobile", "Framework"]
+        },
+        {
+          "technology": "Xcode",
+          "description": "Integrated development environment for macOS for developing software for Apple platforms.",
+          "icon": "devicon-xcode-plain",
+          "link": "https://developer.apple.com/xcode/",
+          "tags": ["Mobile", "IDE"]
+        }
+        
+      ]
+    },
+    {
+      "group": "Other tools",
+      "technologies": [
+        {
+          "technology": "Jira",
+          "description": "Project management tool for agile teams to plan, track, and manage software development.",
+          "icon": "devicon-jira-plain",
+          "link": "https://www.atlassian.com/software/jira",
+          "tags": ["Tools", "Project Management"]
+        },
+        {
+          "technology": "Confluence",
+          "description": "Collaboration tool for teams to create, share, and manage project documentation.",
+          "icon": "devicon-confluence-plain",
+          "link": "https://www.atlassian.com/software/confluence",
+          "tags": ["Tools", "Documentation"]
+        },
+        {
+          "technology": "Sourcetree",
+          "description": "Git GUI client for managing Git repositories.",
+          "icon": "devicon-sourcetree-plain",
+          "link": "https://www.sourcetreeapp.com/",
+          "tags": ["Tools", "Version Control"]
+        },
+        {
+          "technology": "Git",
+          "description": "Version control system for tracking changes in source code during software development.",
+          "icon": "devicon-git-plain",
+          "link": "https://git-scm.com/",
+          "tags": ["Tools", "Version Control"]
+        },
+        {
+          "technology": "Postman",
+          "description": "API development environment for building, testing, and documenting APIs.",
+          "icon": "devicon-postman-plain",
+          "link": "https://www.postman.com/",
+          "tags": ["Tools", "API"]
+        },
+        {
+          "technology": "Figma",
+          "description": "Web-based UI/UX design tool for creating prototypes and designs.",
+          "icon": "devicon-figma-plain",
+          "link": "https://www.figma.com/",
+          "tags": ["Tools", "Design"]
+        }
+        
+      ]
+    }
+  ]

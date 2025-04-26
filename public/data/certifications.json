@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Technical Scrum Course.",
+    "organization": "OpenWebinars",
+    "icon": "assets/images/opw_logo.webp"
+  },
+  {
+    "title": "Lab First steps to create iOS Apps: Getting to know Xcode and the MVC pattern.",
+    "organization": "OpenWebinars",
+    "icon": "assets/images/opw_logo.webp"
+  },
+  {
+    "title": "Object Oriented Programming Lab with Swift: Applying to UI objects of an App.",
+    "organization": "OpenWebinars",
+    "icon": "assets/images/opw_logo.webp"
+  },
+  {
+    "title": "Lab: Develop your first iPhone and iPad app with Swift.",
+    "organization": "OpenWebinars",
+    "icon": "assets/images/opw_logo.webp"
+  },
+  {
+    "title": "Lab: Work on the responsive design of your iPhone apps using Constraints.",
+    "organization": "OpenWebinars",
+    "icon": "assets/images/opw_logo.webp"
+  }
+]

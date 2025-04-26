@@ -1,0 +1,117 @@
+<aside [ngClass]="{'w-55': !collapsed(), 'w-16': collapsed()}" id="logo-sidebar"
+   class="hidden lg:block fixed top-0 left-0 z-40 w-55 h-screen transition-[width] duration-500 ease-in-out"
+   aria-label="Sidebar">
+   <div class="h-full px-3 py-4 items-center overflow-y-auto border-1 border-line bg-side">
+      <div class="flex items-center content-center mb-5">
+         <img [ngClass]="{'h-10 w-10': !collapsed(), 'h-8 w-8 me-0 ml-0.75': collapsed()}" src="{{profile_img}}"
+            class="me-3 object-cover rounded-full shrink-0" alt="profile" />
+         <div [ngClass]="{'opacity-0 h-0 overflow-hidden': collapsed(),'opacity-100 h-auto': !collapsed()}" id="header"
+            class="flex-col items-center transition-all duration-500 ease-in-out text-nowrap">
+            <h1 class="text-xs sm:text-xs lg:text-sm font-semibold text-headers">{{heroTitle}}</h1>
+            <h2 class="text-xs lg:text-xs font-medium text-secondary">{{heroSubtitle}}</h2>
+         </div>
+         <button type="button" aria-label="Toggle sidebar" (click)="toggleSidebar()" id="toggle-button" #toggleButton [ngClass]="{'rotate-180': collapsed()}"
+            class="right-0 translate-x-1/2 p-0.5 border border-line rounded-full bg-side cursor-pointer flex justify-center items-center absolute hover:[&>svg]:fill-headers transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 -960 960 960"
+               class="fill-secondary transition-all duration-500 ease-in-out">
+               <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+            </svg>
+         </button>
+      </div>
+
+      <ul class="space-y-2 font-medium content-center">
+         @for (item of menuItems; track $index) {
+         <li>
+            <a [ngClass]="{
+               'bg-line text-headers': activeSection === item.href, 
+               'text-gray-900 dark:text-white': activeSection !== item.href,
+               'justify-center': collapsed(),
+               'justify-start': !collapsed()
+             }"
+               [href]="item.href"
+               class="flex p-2 border-1 border-transparent text-gray-900 rounded-lg group transition-all duration-300 ease-in-out items-center">
+               <i [ngClass]="{
+                  'text-headers bx-tada animation-once': activeSection === item.href, 
+                  'text-secondary': activeSection !== item.href
+                }"
+                  class="bx {{item.icon}}  text-secondary group-focus:text-headers group-hover:text-headers transition-all duration-300 ease-in-out shrink-0"></i>
+               <span [ngClass]="{
+                  'text-headers': activeSection === item.href, 
+                  'text-secondary': activeSection !== item.href
+                }" [class.hidden]="collapsed()"
+                  class="text-xs sm:text-xs lg:text-sm ms-2 text-nowrap overflow-hidden text-secondary group-focus:text-headers group-hover:text-headers transition-all duration-500 ease-in-out">{{item.label}}</span>
+            </a>
+         </li>
+         }
+      </ul>
+      <hr class="my-4 border-line"/>
+
+      <ul class="space-y-2 font-medium">
+         @for (item of contactItems; track $index) {
+            <li>
+               <a [ngClass]="{
+                  'bg-line text-headers': activeSection === item.href, 
+                  'text-gray-900': activeSection !== item.href,
+                  'justify-center': collapsed(),
+                  'justify-start': !collapsed()
+                }"
+                  [href]="item.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex p-2 border-1 border-side text-gray-900 rounded-lg focus:border-1 focus:bg-line focus:border-line group transition-all duration-300 ease-in-out items-center">
+                  <i class="bx {{item.icon}}  text-secondary group-focus:text-headers group-hover:text-headers transition-all duration-300 ease-in-out shrink-0"></i>
+                  <span [class.hidden]="collapsed()"
+                     class="text-xs sm:text-xs lg:text-sm ms-2 text-nowrap overflow-hidden text-secondary group-focus:text-headers group-hover:text-headers transition-all duration-500 ease-in-out">{{item.label}}</span>
+               </a>
+            </li>
+            }
+      </ul>
+   </div>
+</aside>
+
+ <!-- MOBILE -->
+   <!-- TOP HEADER BAR -->
+   <div class="lg:hidden sticky z-50 h-20 w-full bg-background top-0 left-0 bg-back border-b border-transparent transition-all duration-500">
+      <div class="p-5 w-full max-w-[900px] px-4 h-full">
+         <div class="flex items-center left-0 ps-1 mb-5">
+            <img src="{{profile_img}}" class="h-10 w-10 me-3 object-cover rounded-full shrink-0" alt="profile"  />
+            <div class="flex-col items-center transition-all duration-500 ease-in-out text-nowrap">
+               <h1 class="text-xs sm:text-xs lg:text-sm font-semibold text-headers">{{heroTitle}}</h1>
+               <h2 class="text-xs lg:text-xs font-medium text-secondary">{{heroSubtitle}}</h2>
+            </div>
+            <div class="flex justify-end space-x-1 w-full">
+               @for (item of contactItems; track $index) {
+               <a [href]="item.href" target="_blank" rel="noopener noreferrer"
+                  [attr.aria-label]="item.ariaLabel"
+                  class="flex p-2 rounded-lg group transition-all duration-300 ease-in-out items-center">
+                  <i class="bx {{item.icon}}  text-secondary  group-hover:text-headers transition-all duration-300 ease-in-out shrink-0 group-focus:text-headers group-focus:outline-none"></i>
+               </a>
+               }
+            </div>
+         </div>
+      </div>
+   </div>
+   
+   <!-- BOT NAV BAR -->
+   <div class="lg:hidden w-full h-20 bg-side fixed border-t border-line shadow-md bottom-0 left-0 z-50">
+      <div class="mx-auto w-full  px-4 h-full">
+         <div class="flex items-center h-full w-full justify-between gap-0.5 overflow-x-auto no-scrollbar scroll-behavior: smooth;">
+            @for (item of menuItems; track $index) {
+            <a #menuBtn 
+            [ngClass]="{'bg-line text-headers': activeSection === item.href, 'text-gray-900 dark:text-white': activeSection !== item.href}"
+               [href]="item.href"
+               class="whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 hover:bg-line transition-all duration-300 px-4 py-2 flex min-w-max flex-col w-fit max-w-16 h-14 m-0 items-center justify-center border text-side border-transparent group">
+               <i [ngClass]="{
+                        'text-headers bx-tada animation-once': activeSection === item.href, 
+                        'text-secondary': activeSection !== item.href
+                      }"
+                  class="bx {{item.icon}} bx-sm  text-secondary group-focus:text-headers group-hover:text-headers transition-all duration-300 ease-in-out shrink-0"></i>
+               <span [ngClass]="{
+                        'text-headers': activeSection === item.href, 
+                        'text-secondary': activeSection !== item.href
+                      }" class="text-[0.7rem] text-secondary capitalize group-hover:text-headers">{{item.label}}</span>
+            </a>
+            }
+         </div>
+      </div>
+   </div>
