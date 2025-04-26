@@ -1,0 +1,57 @@
+<section id="education">
+    <h1 class="text-3xl sm:text-3xl lg:text-4xl font-semibold text-headers">{{titleSection}}</h1>
+    <p class=" mb-2 text-sm sm:text-base lg:text-lg font-light text-secondary">{{descriptionSection}}</p>
+    <!-- Education Cards -->
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        @for (edu of education; track $index) {
+        <a href="{{edu.ref}}" target="_blank" rel="noopener noreferrer"
+            class="focus:bg-side rounded-lg transition-colors duration-500 ease-in-out">
+            <div
+                class="p-4 border-1 border-side border-opacity-5 rounded-lg transition-colors duration-500 ease-in-out hover:bg-side cursor-pointer flex flex-col justify-between h-full">
+                <div class="flex justify-between items-start">
+                    <div class="mr-auto">
+                        <h2 class="text-l sm:text-l lg:text-xl font-semibold text-headers">{{edu.title}}</h2>
+                        <p
+                            class="mb-1 mt-0.5 lg:mb-2 text-xs sm:text-sm lg:text-sm font-extralight leading-none text-gray-400">
+                            {{edu.date}}</p>
+                    </div>
+
+                    <div class="flex justify-end">
+                        @if (edu.id === 0) {
+                        <img src="{{edu.logo}}" alt="logo org"
+                            class="mt-1 w-auto h-10 sm:h-10 lg:h-15 object-cover rounded-md" />
+                        } @else {
+                        <img src="{{edu.logo}}" alt="logo org" class="-mt-1 w-auto h-15 sm:h-15 lg:h-20 object-cover" />
+                        }
+                    </div>
+                </div>
+                <p class="text-xs sm:text-sm text-headers">{{edu.organization}}</p>
+                <p class="mb-1 lg:mb-2 text-xs sm:text-sm lg:text-sm font-light text-secondary">
+                    {{edu.achievements}}
+                </p>
+                <div class="mt-auto">
+                    @if (edu.id === 0) {
+                    <div class="flex items-center">
+                        <span
+                            class="text-xs sm:text-sm lg:text-sm font-extralight leading-none text-gray-400">{{edu.foot}}</span>
+                    </div>
+                    } @else {
+                    <div class="text-sm sm:text-base flex items-center space-x-1">
+                        <span
+                            class="text-xs sm:text-sm lg:text-sm font-extralight leading-none text-green-400">{{edu.foot}}</span>
+                        <span class="mb-1 relative flex size-1.5">
+                            <span
+                                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex size-1.5 rounded-full bg-green-400"></span>
+                        </span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </a>
+        }
+    </div>
+    <p class="mt-5 mb-1 text-lg md:text-xl font-medium text-headers">Certifications</p>
+    <!-- Certifications Carousel -->
+    <app-carousel [items]="certifications" carouselId="featured-carousel"></app-carousel>
+</section>

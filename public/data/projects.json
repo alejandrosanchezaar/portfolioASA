@@ -1,0 +1,66 @@
+[
+    {
+      "title": "Hera iOS",
+      "description": "App, developed as part of my bachelor's thesis, that provides an innovative solution to modernize the triage process and enhance patient care, offering a powerful tool to optimize healthcare systems.",
+      "video": "assets/videos/heraIOS",
+      "finished": true,
+      "github": false,
+      "ref": "assets/pdfs/tfg.pdf",
+      "port": "assets/images/HERAPort.png",
+      "tags": [
+        { "name": "Swift", "icon": "devicon-swift-plain" },
+        { "name": "UIKit", "icon": "devicon-swift-plain" },
+        { "name": "Core Data", "icon": "devicon-swift-plain" }
+        ],
+      "buttonTitle": "Bachelor's Thesis",
+      "icon":"bx-book-open"
+    },
+    {
+        "title": "MueveTIC",
+        "description": "App for managing electric vehicle reservations in the city of Ciudad Real. Through the app, users can check availability and book registered vehicles. The service includes battery recharging, maintenance, and a rating system to evaluate user experiences.",
+        "video": "assets/videos/mueveTIC",
+        "finished": true,
+        "github": true,
+        "ref": "https://github.com/alejandrosanchezaar/mueveTIC",
+        "port": "assets/images/MueveTICPort.png",
+        "tags": [
+        { "name": "Angular", "icon": "devicon-angular-plain" },
+        { "name": "Java", "icon": "devicon-java-plain" },
+        { "name": "Spring", "icon": "devicon-spring-plain" },
+        { "name": "MongoDB", "icon": "devicon-mongodb-plain"}
+        ],
+        "buttonTitle": "See source code",
+        "icon":"bxl-github"
+    },
+    {
+        "title": "MIE",
+        "description": "App for Managing Ideas of Entrepreneurs with the aim of providing visibility to innovative ideas coming from UPM students, so such ideas can be improved and at the same time investors have a place to find new business opportunities.",
+        "video": "assets/videos/MIE",
+        "finished": true,
+        "github": true,
+        "ref": "https://github.com/alejandrosanchezaar/AgileSoftwareProject",
+        "port": "assets/images/MIEPort.png",
+        "tags": [
+        { "name": "Angular", "icon": "devicon-angular-plain" },
+        { "name": "Firebase", "icon": "devicon-firebase-plain" }
+        ],
+        "buttonTitle": "See source code",
+        "icon":"bxl-github"
+      },
+      {
+        "title": "fitPace",
+        "description": "App that seamlessly connects coaches and athletes, enabling personalized tracking of workouts and nutrition. It enhances communication and fosters continuous improvement with real-time updates, customized plans, and data-driven insights.",
+        "video": "assets/videos/fitPace",
+        "finished": false,
+        "github": false,
+        "ref": "",
+        "port": "assets/images/fitpacePort.png",
+        "tags": [
+        { "name": "Swift", "icon": "devicon-swift-plain" },
+        { "name": "SwiftUI", "icon": "devicon-swift-plain" },
+        { "name": "Firebase", "icon": "devicon-firebase-plain" }
+        ],
+        "buttonTitle": "See source code",
+        "icon":"bxl-github"
+      } 
+]

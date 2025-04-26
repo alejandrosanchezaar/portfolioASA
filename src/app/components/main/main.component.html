@@ -1,0 +1,19 @@
+<div class="flex flex-col lg:flex-row lg:space-x-10 h-dvh overflow-hidden">
+    <div [ngClass]="{'lg:w-60': !collapsed(), 'lg:w-16': collapsed()}"
+        class="transition-all duration-500 ease-in-out overflow-visible">
+        <app-side-bar activeSection="{{activeSection}}"></app-side-bar>
+    </div>
+
+    <div class="bg-back w-full flex-grow flex flex-col relative overflow-y-auto scroll-smooth" #scrollContainer>
+        <main class="mx-auto w-full max-w-[1000px] px-4 flex-grow flex">
+            <div class="flex flex-col w-full relative flex-grow space-y-10 mt-5 lg:mt-20 md:space-y-20 mb-25 lg:mb-10">
+                <app-intro />
+                <app-experience />
+                <app-about-me />
+                <app-education />
+                <app-stack />
+                <app-projects />
+            </div>
+        </main>
+    </div>
+</div>

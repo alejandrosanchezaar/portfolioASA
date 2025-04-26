@@ -1,0 +1,47 @@
+<div [id]="carouselId" class="relative w-full">
+    <!-- Carousel wrapper -->
+    <div class="relative h-30 lg:h-30 overflow-hidden rounded-lg">
+        <!-- Carousel items -->
+        <div *ngFor="let item of items; let i = index; trackBy: trackByFn"
+            class="absolute w-full h-full flex justify-center items-center" [ngClass]="getItemClasses(i)">
+            <div
+                class="w-[75%] md:w-[80%] flex items-center mx-auto p-2.5 lg:p-4 border border-side border-opacity-5 rounded-lg transition-colors duration-500 ease-in-out hover:bg-side">
+                <div class="grid grid-cols-12 gap-x-4 items-center">
+                    <div class="col-span-2 flex justify-center">
+                        <img [src]="item.icon" alt="org" class="w-6 h-6 lg:w-15 lg:h-15 object-cover rounded-md" />
+                    </div>
+                    <div class="col-span-10">
+                        <h3 class="text-xs md:text-sm lg:text-lg sm:font-normal lg:font-semibold text-headers">
+                            {{ item.title }}
+                        </h3>
+                        <p class="text-xs sm:text-sm lg:text-sm mt-1 font-light text-secondary">
+                            {{ item.organization }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider controls -->
+    <button type="button" aria-label="Previous slide" (click)="prev()"
+        class="absolute top-1/2 start-0 z-30 flex items-center justify-center p-1 md:p-1.5 border border-line rounded-full text-secondary bg-back transition-colors duration-500 ease-in-out cursor-pointer hover:text-headers hover:border-headers hover:bg-back focus:text-headers focus:border-headers focus:bg-back focus:outline-none -translate-y-1/2">
+        <i class='bx bx-chevron-left bx-sm'></i>
+    </button>
+
+    <button type="button" aria-label="Next slide" (click)="next()"
+        class="absolute top-1/2 end-0 z-30 flex items-center justify-center p-1 md:p-1.5 border border-line rounded-full text-secondary bg-back transition-colors duration-500 ease-in-out cursor-pointer hover:text-headers hover:border-headers hover:bg-back focus:text-headers focus:border-headers focus:bg-back focus:outline-none -translate-y-1/2">
+        <i class='bx bx-chevron-right bx-sm'></i>
+    </button>
+
+
+    <!-- Indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 -bottom-5  md:-bottom-8 left-1/2 space-x-3 rtl:space-x-reverse">
+        <div class="flex space-x-3">
+            <button *ngFor="let item of items; let i = index; trackBy: trackByFn" type="button"
+                class="w-2 h-2 md:w-3 md:h-3 rounded-full cursor-pointer transition-colors duration-300"
+                [ngClass]="{'bg-headers ': i === currentIndex, 'bg-side hover:bg-white': i !== currentIndex}"
+                [attr.aria-label]="'Go to slide ' + (i + 1)" (click)="goToSlide(i)"></button>
+        </div>
+    </div>
+</div>

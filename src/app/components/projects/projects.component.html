@@ -1,0 +1,72 @@
+<section id="projects">
+    <h1 class="text-3xl sm:text-3xl lg:text-4xl font-semibold text-headers">{{titleSection}}</h1>
+    <p class="mb-2 text-sm sm:text-sm lg:text-lg font-light text-secondary">{{descriptionSection}}</p>
+
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        @for (project of projects; track $index) {
+        <div
+            class="max-w bg-back border border-line rounded-lg hover:border-headers transition-colors duration-500 ease-in-out overflow-hidden">
+            <div class="relative w-full rounded-t-lg aspect-video">
+                @if (spinnerStates[$index]) {
+                <div role="status" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    <svg aria-hidden="true" class="w-8 h-8 text-side animate-spin  fill-headers" viewBox="0 0 100 101"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                            fill="currentColor" />
+                        <path
+                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                            fill="currentFill" />
+                    </svg>
+                    <span class="sr-only">Loading...</span>
+                </div>
+                }
+                <video autoplay muted loop playsinline preload="metadata" poster="{{project.port}}"
+                    class=" w-full object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+                    (canplaythrough)="onVideoLoad($index)">
+                    <source src="{{project.video}}.mp4" type="video/mp4" />
+                </video>
+            </div>
+
+            <div class="p-4">
+                <h2 class="text-l sm:text-l lg:text-xl font-semibold text-headers">{{project.title}}</h2>
+                <p class="text-xs sm:text-sm lg:text-sm mt-1 font-light text-secondary">{{project.description}}</p>
+                <div class="flex flex-row flex-wrap items-center justify-start gap-1 mt-2">
+                    @for (tag of project.tags; track $index) {
+                    <span
+                        class="inline-flex items-center gap-1 bg-back border-1 border-line text-secondary text-xs sm:text-sm lg:text-xs font-light sm:font-normal lg:font-medium me-1 sm:me-2 px-1.5 sm:px-2.5 py-0.25 sm:py-0.5 rounded-lg">
+                        <i class="{{tag.icon}} text-xs"></i>
+                        {{tag.name}}
+                    </span>
+                    }
+                </div>
+
+                @if (project.finished) {
+                <button type="button" (click)="openURL(project.ref)"
+                    class="mt-2.5 flex group px-2 py-1.5 sm:px-2 sm:py-1.5 lg:px-4 lg:py-1.5 font-light text-xs sm:text-sm lg:text-sm text-center justify-center items-center text-secondary base border-1  border-side border-opacity-5 rounded-lg transition-colors duration-500 ease-in-out hover:bg-github hover:border-github cursor-pointer hover:text-headers me-2">
+                    <i
+                        class="bx {{project.icon}} bx-xs me-2 fill-current text-secondary group-hover:text-headers transition-colors duration-300"></i>
+                    {{project.buttonTitle}}
+                    <i class="bx bxs-chevrons-right bx-xs group-hover:animate-bounce-right rtl:rotate-180 ms-2"></i>
+                </button>
+                }@else {
+                <div
+                    class="mt-2.5 inline-flex px-2 py-1 sm:px-2 sm:py-1 lg:px-4 lg:py-1 font-light text-xs sm:text-sm lg:text-sm text-gradient-animate bg-gradient-to-r from-green-700 via-green-400 to-green-700 border-1 border-green-700 rounded-lg">
+                    In progress...
+                </div>
+                }
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="flex justify-center mt-4">
+        <button type="button" (click)="openURL(githubURL)"
+            class="group px-2 py-1 sm:px-2 sm:py-1 lg:px-4 lg:py-2 font-bold text-xs sm:text-sm lg:text-sm text-center  text-secondary base border-1  border-transparent border-opacity-5 rounded-lg transition-colors duration-500 ease-in-out  hover:border-side cursor-pointer hover:text-headers   inline-flex items-center me-2">
+            <i
+                class="bx bxl-github bx-xs me-2 fill-current text-secondary group-hover:text-headers transition-colors duration-300"></i>
+            <span class="font-medium text-gradient-animate bg-gradient-to-r from-gray-700 via-gray-400 to-gray-700">See
+                more projects...</span>
+        </button>
+    </div>
+</section>

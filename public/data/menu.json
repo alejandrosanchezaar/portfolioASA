@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Experience",
+    "href": "#experience",
+    "icon": "bx-briefcase"
+  },
+  {
+    "label": "About me",
+    "href": "#aboutMe",
+    "icon": "bx-user"
+  },
+  {
+    "label": "Education",
+    "href": "#education",
+    "icon": "bxs-graduation"
+  },
+  {
+    "label": "Stack",
+    "href": "#stack",
+    "icon": "bxs-dashboard"
+  },
+  {
+    "label": "Projects",
+    "href": "#projects",
+    "icon": "bx-rocket"
+  }
+]

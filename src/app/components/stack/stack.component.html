@@ -1,0 +1,60 @@
+<section id="stack" class="mt-10">
+  <h1 class="text-3xl sm:text-3xl lg:text-4xl font-semibold text-headers">{{titleSection}}</h1>
+  <p class="mb-2 text-sm sm:text-sm lg:text-lg font-light text-secondary">{{descriptionSection}}</p>
+
+  <div id="accordion-arrow-icon">
+    @for (stack of stackGroups; track $index) {
+    <div id="accordion-arrow-icon-heading-{{$index}}">
+      <button type="button" class="bg-back text-secondary border  border-side flex items-center justify-between w-full p-4 rtl:text-right gap-3
+               hover:bg-side focus:bg-side focus:outline-none focus:text-headers hover:text-headers focus:ring-0
+               transition-colors ease-in-out duration-500 cursor-pointer" [attr.aria-expanded]="accordionStates[$index]"
+        (click)="toggleAccordion($index)"
+        [ngClass]="{ 'bg-back rounded-md': !accordionStates[$index], 'bg-side text-headers rounded-t-md': accordionStates[$index]}">
+        <span class="font-normal text-sm md:text-base ">{{stack.group}}</span>
+        <svg data-accordion-icon class="w-2 h-2 md:w-3 md:h-3 transform transition-transform duration-300 ease-in-out"
+          [ngClass]="{ 'rotate-180': accordionStates[$index] }" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 5 5 1 1 5" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="accordion-arrow-icon-body-{{$index}}" class="overflow-hidden transition-all duration-100 ease-in-out mb-4"
+      [ngClass]="{ 'max-h-0': !accordionStates[$index], 'max-h-[1000px]': accordionStates[$index] }">
+      <div class="p-4 border border-t-0 border-side rounded-b-md">
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+          @for (stackTecnologies of stack.technologies; track $index) {
+          <a [href]="stackTecnologies.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-4 border-1 justify-between items-center border-side border-opacity-5 rounded-lg transition-colors duration-500 ease-in-out hover:bg-side cursor-pointer focus:bg-side focus:outline-none">
+            <div class="flex w-auto justify-between max-w-screen-xl mx-auto lg:grid-cols-12 space-x-5">
+              <div class="flex justify-start lg:justify-start lg:mt-0 lg:col-span-3">
+                <i class="{{stackTecnologies.icon}} text-headers text-3xl lg:text-5xl"></i>
+              </div>
+              <div class="mr-auto lg:col-span-9">
+                <h2 class="text-l sm:text-l lg:text-xl font-semibold text-headers">
+                  {{stackTecnologies.technology}}
+                </h2>
+                <p class="text-xs sm:text-sm lg:text-sm mt-1 font-extralight text-secondary">
+                  {{stackTecnologies.description}}
+                </p>
+                <div class="flex flex-row items-center justify-self-start gap-0.5 mt-2">
+                  @for (stackTags of stackTecnologies.tags; track $index) {
+                    <span
+                    class="bg-back border-1 border-line text-secondary text-xs sm:text-sm lg:text-xs font-light sm:font-normal lg:font-medium me-1 sm:me-2 px-1.5 sm:px-2.5 py-0.25 sm:py-0.5 rounded-lg">
+                    {{stackTags}}
+                  </span>
+                  }
+                </div>
+              </div>
+            </div>
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section id="presentation">
+    <div>
+        <h1 class="text-4xl sm:text-4xl lg:text-6xl font-semibold text-headers">{{header}}</h1>
+        <h2 class="text-2xl lg:text-4xl font-medium text-gradient-animate bg-gradient-to-r from-gray-700 via-gray-400 to-gray-700">{{subheader}}</h2>
+        
+        <div class="mt-4 space-x-2 flex">            
+            <button type="button"
+            class="group px-3 py-1.5 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 font-medium text-xs sm:text-sm lg:text-sm text-center text-headers lg:text-secondary base border-1 border-linkedIn lg:border-side bg-linkedIn lg:bg-back border-opacity-5 rounded-lg transition-colors duration-500 ease-in-out hover:bg-linkedIn hover:border-linkedIn cursor-pointer hover:text-headers inline-flex items-center gap-2"
+                (click)="openURL(refLinkedIn)">
+                <i class='bx bxl-linkedin text-headers lg:text-secondary group-hover:text-headers transition-colors duration-300'></i>
+                LinkedIn
+            </button>
+            <button type="button"
+            class="group px-3 py-1.5 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 font-medium text-xs sm:text-sm lg:text-sm text-center text-headers  lg:text-secondary base border-1 border-github lg:border-side bg-github lg:bg-back border-opacity-5 rounded-lg transition-colors duration-500 ease-in-out hover:bg-github hover:border-github cursor-pointer hover:text-headers inline-flex items-center gap-2"
+                (click)="openURL(refGithub)">
+                <i class='bx bxl-github text-headers lg:text-secondary group-hover:text-headers transition-colors duration-300'></i>
+                GitHub
+            </button>
+            <button type="button"
+            class="group px-3 py-1.5 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 font-medium text-xs sm:text-sm lg:text-sm text-center text-headers  lg:text-secondary base border-1 border-side lg:border-side bg-side lg:bg-back border-opacity-5 rounded-lg transition-colors duration-500 ease-in-out hover:bg-side hover:border-side cursor-pointer hover:text-headers inline-flex items-center gap-2"
+                (click)="copyToClipboard()">
+                <i class='bx bxs-copy text-headers lg:text-secondary group-hover:text-headers transition-colors duration-300'></i>
+                {{emailBtnText}}
+            </button>
+        </div>
+    </div>
+</section>

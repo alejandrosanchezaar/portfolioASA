@@ -1,0 +1,32 @@
+<section id="experience" class="md:-mt-10">
+    <div class="mb-2">
+        <h2 class="text-3xl sm:text-3xl lg:text-4xl font-semibold text-headers">{{titleSection}}</h2>
+        <p class="text-sm sm:text-base lg:text-lg font-light text-secondary">{{descriptionSection}}</p>
+    </div>
+
+    <ol class="z-0 relative border-s border-line">
+        @for (experience of experiences; track $index) {
+        <li class="mb-5 ms-4">
+            <div class="absolute w-3 h-3 bg-headers rounded-full mt-1.75 -start-1.5 border border-headers"></div>
+            <time class="text-xs sm:text-sm lg:text-sm font-light leading-none text-gray-300">{{experience.time}}</time>
+            <h3 class="text-lg sm:text-xl lg:text-xl font-semibold text-headers">{{experience.role}}</h3>
+            <p class="text-sm sm:text-base lg:text-base font-light text-secondary">{{experience.description}}</p>
+            <ul class=" mb-5 ps-2 list-disc list-inside text-secondary">
+                @for (section of experience.sections; track $index) {
+                <li class="text-sm sm:text-base lg:text-base font-light text-secondary">{{section.description}}</li>
+                }
+            </ul>
+        </li>
+        }
+        <li class="ms-4">
+            <span class="absolute mt-1.5 -start-1.5 flex size-3">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex size-3 rounded-full bg-green-400"></span>
+            </span>
+            <time class=" text-xs sm:text-sm lg:text-sm font-light text-gray-300 leading-none">Now</time>
+            <h3 class="text-lg sm:text-xl lg:text-xl font-semibold headers flex items-center space-x-1">
+                <span class="text-gradient-animate bg-gradient-to-r from-headers via-gray-400 to-headers">To be continued...</span>
+            </h3>
+        </li>
+    </ol>
+</section>
