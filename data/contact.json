@@ -1,0 +1,14 @@
+[
+  {
+    "label": "LinkedIn",
+    "href": "https://www.linkedin.com/in/alejandro-s%C3%A1nchez-arcos/",
+    "icon": "bxl-linkedin",
+    "ariaLabel": "Visit LinkedIn profile"
+  },
+  {
+    "label": "GitHub",
+    "href": "https://github.com/alejandrosanchezaar",
+    "icon": "bxl-github",
+    "ariaLabel": "Visit GitHub profile"
+  }
+]

@@ -1,0 +1,15 @@
+[
+    {
+      "time": "February 2024 - August 2024",
+      "role": "Inetum Software Developer (iOS Developer)",
+      "description": "Integration into a development team to carry out the Bachelor's Thesis, working on a real project focused on developing an iOS mobile application to streamline the triage process during patient transport in ambulances:",
+      "sections": [
+        { "description": "Collaborated within a multidisciplinary team in a professional environment, actively participating in all stages of the software development life cycle."},
+        { "description": "Utilized Swift (UIKit) and Apple's native technologies to design user interfaces via storyboards and managed dependencies using CocoaPods."},
+        { "description": "Applied the VIPER architecture pattern to ensure modularity, scalability, and maintainability of the codebase."},
+        { "description": "Followed agile methodologies using the SCRUM framework, with Jira and Confluence for task tracking and documentation."},
+        { "description": "Managed source control with GitFlow in GitLab, enabling efficient and structured collaboration."}
+        ],
+      "actual": false
+    }
+] 
